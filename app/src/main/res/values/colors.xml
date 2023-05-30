@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="notifications">#38FFD1</color>
+    <color name="profile">#FFC20B</color>
+    <color name="play">#FF1C7E</color>
+    <color name="message_companion">#FF7258</color>
+
+    <color name="notifications_20">#3338FFD1</color>
+    <color name="profile_20">#33FFC20B</color>
+    <color name="play_20">#33FF1C7E</color>
+
+</resources>

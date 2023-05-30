@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/vhodFragment">
+
+    <fragment
+        android:id="@+id/vhodFragment"
+        android:name="com.example.forsamsung.ui.fragments.VhodFragment"
+        android:label="fragment_vhod"
+        tools:layout="@layout/fragment_vhod" >
+        <action
+            android:id="@+id/action_vhodFragment_to_registrFragment"
+            app:destination="@id/registrFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrFragment"
+        android:name="com.example.forsamsung.ui.fragments.RegistrFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registrFragment_to_setupProfile"
+            app:destination="@id/setupProfile" />
+        <action
+            android:id="@+id/action_registrFragment_to_vhodFragment"
+            app:destination="@id/vhodFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/setupProfile"
+        android:name="com.example.forsamsung.ui.fragments.SetupProfile"
+        android:label="setup_profile"
+        tools:layout="@layout/setup_profile" >
+        <action
+            android:id="@+id/action_setupProfile_to_vhodFragment"
+            app:destination="@id/vhodFragment" />
+    </fragment>
+</navigation>
