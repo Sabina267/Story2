@@ -40,6 +40,7 @@ class OneChatFragment(userId:String): Fragment() {
                 val name = userMap?.get("username") as? String
                 companionName.text = name
             }
+
             back.setOnClickListener(){
                 replaceFragment(UsersChatOneFragment())
             }

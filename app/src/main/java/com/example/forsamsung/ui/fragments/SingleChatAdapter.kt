@@ -1,4 +1,4 @@
-package com.example.forsamsung.ui.fragments.oneChat
+package com.example.forsamsung.ui.fragments
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -12,7 +12,7 @@ import com.example.forsamsung.utilits.UID
 import com.example.telegram.models.CommonModel
 
 
-class OneChatAdapter : RecyclerView.Adapter<OneChatAdapter.SingleChatHolder>() {
+class SingleChatAdapter : RecyclerView.Adapter<SingleChatAdapter.SingleChatHolder>() {
 
     private var mListMessagesCache = emptyList<CommonModel>()
 
@@ -38,6 +38,7 @@ class OneChatAdapter : RecyclerView.Adapter<OneChatAdapter.SingleChatHolder>() {
             holder.blocReceivedMessage.visibility = View.VISIBLE
             holder.chatReceivedMessage.text = mListMessagesCache[position].text
         }
+
     }
     @SuppressLint("NotifyDataSetChanged")
     fun setList(list: List<CommonModel>) {

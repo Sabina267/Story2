@@ -27,10 +27,8 @@ class OneNewChatAdapter : RecyclerView.Adapter<OneNewChatAdapter.SingleChatHolde
     override fun getItemCount(): Int = mListMessagesCache.size
     override fun onBindViewHolder(holder: SingleChatHolder, position: Int) {
         if (mListMessagesCache[position].from == UID) {
-            println("GONE")
             holder.zapr.visibility=View.GONE
         } else {
-            println("VISIBLE")
             holder.zapr.visibility=View.VISIBLE
         }
     }

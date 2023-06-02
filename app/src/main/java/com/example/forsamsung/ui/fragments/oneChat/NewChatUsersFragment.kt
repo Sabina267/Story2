@@ -1,9 +1,11 @@
-package com.example.forsamsung.ui.fragments
+package com.example.forsamsung.ui.fragments.oneChat
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.LinearLayout
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -11,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.forsamsung.activities.Home
 import com.example.forsamsung.databinding.FragmentNewUsersChatOneBinding
 import com.example.forsamsung.models.User
-import com.example.forsamsung.ui.fragments.oneChat.OneChatFragment
 import com.example.forsamsung.utilits.*
 import com.google.firebase.database.*
 
@@ -65,6 +66,7 @@ class NewChatUsersFragment: Fragment(),userAdapter3.Listener {
     }
     override fun onClickBut(userId:String) {
         showToast("Запрос отправлен")
+        sendZapros(userId)
 
     }
 }

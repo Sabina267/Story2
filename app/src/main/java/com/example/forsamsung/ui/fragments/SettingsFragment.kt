@@ -70,7 +70,7 @@ class SettingsFragment: Fragment() {
                     REF_DATABASE_ROOT.child(NODE_NAMEID)
                         .addListenerForSingleValueEvent(AppValueEventListener{
                             if (it.hasChild(nameid)){
-                                showToast("Такой пользователь уже существует")
+
                             }
                             else{
                                 REF_DATABASE_ROOT.child(NODE_NAMEID).child(nameid)

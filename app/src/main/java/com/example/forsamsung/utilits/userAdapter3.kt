@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.forsamsung.R
 import com.example.forsamsung.models.User
-import com.example.forsamsung.ui.fragments.NewChatUsersFragment
+import com.example.forsamsung.ui.fragments.oneChat.NewChatUsersFragment
 
 
 class userAdapter3(private val userList:ArrayList<User>, val listener: NewChatUsersFragment): RecyclerView.Adapter<userAdapter3.viewHolder>() {

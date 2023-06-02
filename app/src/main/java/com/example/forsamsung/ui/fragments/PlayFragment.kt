@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.forsamsung.activities.WriteStoryForMyself
 import com.example.forsamsung.databinding.FragmentPlayBinding
-import com.example.forsamsung.databinding.WriteStoryForMyselfBinding
+import com.example.forsamsung.ui.fragments.oneChat.NewChatUsersFragment
 import com.example.forsamsung.utilits.replaceActivity
 import com.example.forsamsung.utilits.replaceFragment
 
@@ -35,6 +35,9 @@ class PlayFragment: Fragment(){
             }
             play3.setOnClickListener(){
                 replaceFragment(NewChatUsersFragment())
+            }
+            play4.setOnClickListener(){
+                replaceFragment(Notifications())
             }
         }
 

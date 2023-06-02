@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.oneChat.NewChatUsersFragment"
+    tools:context=".ui.fragments.Notifications"
     android:orientation="vertical"
     android:background="@color/white"
     android:layout_marginTop="10dp"
@@ -25,7 +25,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Выбери пользователя"
+            android:text="Уведомления"
             android:textSize="32dp"
             android:layout_marginTop="5dp"
             android:textColor="@color/black"
@@ -34,19 +34,16 @@
 
     </LinearLayout>
 
-
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/userNewChatList"
+        android:id="@+id/userNotificationList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/item_new_user"
+        tools:listitem="@layout/item_notification"
         android:layout_marginTop="10dp"
-        app:layout_constraintStart_toEndOf="@+id/viberi"
-
 
         />
 </LinearLayout>
