@@ -10,6 +10,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
+import com.example.forsamsung.R
 import com.example.forsamsung.activities.Home
 import com.example.forsamsung.databinding.FragmentVhodBinding
 import com.example.forsamsung.models.User
@@ -32,7 +34,8 @@ class VhodFragment: Fragment() {
 
         with(binding) {
             registracia.setOnClickListener() {
-                replaceFragment(RegistrFragment())
+                Navigation.findNavController(binding.root)
+                    .navigate(R.id.action_vhodFragment_to_registrFragment)
                 vhod.isVisible=false
             }
 

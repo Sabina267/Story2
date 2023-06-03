@@ -3,10 +3,7 @@ package com.example.forsamsung.utilits
 import com.example.forsamsung.models.User
 import com.example.telegram.models.CommonModel
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ServerValue
+import com.google.firebase.database.*
 
 lateinit var AUTH: FirebaseAuth
 lateinit var UID:String
@@ -135,3 +132,30 @@ fun DataSnapshot.getCommonModel(): CommonModel =
 
 fun DataSnapshot.getUserModel(): User =
     this.getValue(User::class.java) ?: User()
+
+fun getStatus(){
+    val database = FirebaseDatabase.getInstance()
+    val zapisiRef = database.getReference("zapisi")
+    val idUserRef = zapisiRef.child(UID)
+
+    idUserRef.addListenerForSingleValueEvent(object : ValueEventListener {
+        override fun onDataChange(dataSnapshot: DataSnapshot) {
+            val count = dataSnapshot.childrenCount
+            if (count<5){
+                REF_DATABASE_ROOT.child("users").child(UID).child("status").setValue("Новичок")
+                USER.status="Новичок"
+            }
+            else if (count>=5 && count<=10){
+                REF_DATABASE_ROOT.child("users").child(UID).child("status").setValue("Любитель")
+                USER.status="Любитель"
+            }
+            else{
+                REF_DATABASE_ROOT.child("users").child(UID).child("status").setValue("Прошаренный")
+                USER.status="Прошаренный"
+            }
+        }
+
+        override fun onCancelled(databaseError: DatabaseError) {
+        }
+    })
+}

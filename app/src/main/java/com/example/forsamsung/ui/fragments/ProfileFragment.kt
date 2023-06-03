@@ -10,10 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.forsamsung.R
 import com.example.forsamsung.databinding.FragmentProfileBinding
 import com.example.forsamsung.models.User
-import com.example.forsamsung.utilits.UID
-import com.example.forsamsung.utilits.USER
-import com.example.forsamsung.utilits.userAdapter
-import com.example.forsamsung.utilits.zapisiAdapter
+import com.example.forsamsung.utilits.*
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -34,7 +31,7 @@ class ProfileFragment: Fragment(){
         binding = FragmentProfileBinding.inflate(inflater, container, false)
         with(binding){
             userName.text = USER.username
-            userStatus.text=USER.status
+            userStatus.text= USER.status
             userBio.text = USER.bio
             settings.setOnClickListener(){
                 val transaction = activity?.supportFragmentManager?.beginTransaction()

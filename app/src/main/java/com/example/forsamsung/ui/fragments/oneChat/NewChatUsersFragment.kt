@@ -67,6 +67,5 @@ class NewChatUsersFragment: Fragment(),userAdapter3.Listener {
     override fun onClickBut(userId:String) {
         showToast("Запрос отправлен")
         sendZapros(userId)
-
     }
 }

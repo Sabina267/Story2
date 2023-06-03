@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
+import com.example.forsamsung.R
 import com.example.forsamsung.databinding.FragmentRegisterBinding
 import com.example.forsamsung.utilits.*
 import com.google.firebase.auth.FirebaseAuth
@@ -26,7 +28,8 @@ class RegistrFragment: Fragment() {
         binding = FragmentRegisterBinding.inflate(inflater, container, false)
         with(binding) {
             voidite.setOnClickListener() {
-                replaceFragment(VhodFragment())
+                Navigation.findNavController(binding.root)
+                    .navigate(R.id.action_registrFragment_to_vhodFragment)
             }
             zareg.setOnClickListener() {
                 val email = emailReg.text.toString()
@@ -52,7 +55,8 @@ class RegistrFragment: Fragment() {
                                     showToast("Вы зарегались")
                                     USER.username=name
                                     USER.id=uid
-                                    replaceFragment(SetupProfile())
+                                    Navigation.findNavController(binding.root)
+                                        .navigate(R.id.action_registrFragment_to_vhodFragment)
                                 }
                                 else{
                                     Toast.makeText(activity,"OSHIBKA", Toast.LENGTH_SHORT).show()
@@ -61,7 +65,7 @@ class RegistrFragment: Fragment() {
 
                         }
                         else{
-                            Toast.makeText(activity,"Пользователь с такой почтой уже существует!", Toast.LENGTH_SHORT).show()
+
                         }
                     }
                 }

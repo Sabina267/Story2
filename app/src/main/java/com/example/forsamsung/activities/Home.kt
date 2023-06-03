@@ -15,11 +15,17 @@ import com.example.forsamsung.utilits.*
 open class Home():AppCompatActivity() {
     lateinit var binding: HomeBinding
     var selectedTab = 1
+
+    override fun onResume() {
+        super.onResume()
+        getStatus()
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = HomeBinding.inflate(layoutInflater)
         initFirebase()
         initUser()
+
         setContentView(binding.root)
         with(binding) {
             bottomBar.isVisible=true

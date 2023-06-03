@@ -35,6 +35,7 @@ class userAdapter3(private val userList:ArrayList<User>, val listener: NewChatUs
             listener.onClick(currentItem.id)
         }
 
+
     }
 
 

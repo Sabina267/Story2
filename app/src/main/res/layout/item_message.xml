@@ -8,6 +8,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bloc_user_message"
+        android:maxWidth="150dp"
+        android:minWidth="100dp"
+        android:elevation="8dp"
         android:layout_width="wrap_content"
         android:layout_marginStart="100dp"
         android:background="@drawable/bg_user_message"
@@ -29,6 +32,9 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bloc_received_message"
+        android:elevation="8dp"
+        android:maxWidth="150dp"
+        android:minWidth="100dp"
         android:layout_width="wrap_content"
         android:layout_marginEnd="100dp"
         android:background="@drawable/bg_receiving_message"

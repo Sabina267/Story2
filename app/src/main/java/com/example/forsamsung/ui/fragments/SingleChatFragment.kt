@@ -38,7 +38,6 @@ class SingleChatFragment(userIdTo:String, userIdFrom:String): Fragment() {
         val view = requireActivity().findViewById<View>(com.example.forsamsung.R.id.bottomBar)
         view.isVisible = false
         with(binding){
-            println("!!!" + userTo+" "+userFrom+" "+ USER.id)
             if (userTo == USER.id){
                 REF_DATABASE_ROOT.child(NODE_USERS).child(userFrom).get().addOnSuccessListener {
                     val userMap = it.value as? Map<*, *>
@@ -82,15 +81,11 @@ class SingleChatFragment(userIdTo:String, userIdFrom:String): Fragment() {
                                             childSnapshot.child("to").toString()==userFrom && childSnapshot.child("to").toString()==userTo){
 
                                         }
-
                                     }
-
                                 }
-
                                 override fun onCancelled(error: DatabaseError) {
                                     TODO("Not yet implemented")
                                 }
-
                             })
                             var text = "Совместная работа"
                             saveZapisId(itog, text, userTo){}
@@ -98,7 +93,6 @@ class SingleChatFragment(userIdTo:String, userIdFrom:String): Fragment() {
                                 replaceFragment(Notifications())
                             }
                         }
-
                     }
                     override fun onCancelled(databaseError: DatabaseError) {}
                 })
@@ -149,7 +143,6 @@ class SingleChatFragment(userIdTo:String, userIdFrom:String): Fragment() {
                 .child(UID)
                 .child(userTo)
         }
-
         mRecyclerView.adapter=mAdapter
         mMessagesListener = AppValueEventListener { dataSnapshot->
             mListMessages=dataSnapshot.children.map {

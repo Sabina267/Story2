@@ -6,19 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragments.TablFragment"
     android:orientation="vertical"
-    android:background="@color/white"
-    android:layout_marginTop="10dp"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp"
+    android:background="@drawable/back_graind_vhod"
+
     android:id="@+id/tabl"
+
     >
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Участники"
         android:textSize="32dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="40dp"
         android:textColor="@color/black"
+        android:layout_marginStart="31dp"
         >
     </TextView>
     <androidx.recyclerview.widget.RecyclerView
@@ -30,8 +30,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:listitem="@layout/item_user"
-        android:layout_marginTop="10dp"
         app:layout_constraintStart_toEndOf="@+id/viberi"
+        android:layout_marginBottom="80dp"
+        android:layout_marginTop="50dp"
 
 
         />

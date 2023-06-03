@@ -22,7 +22,7 @@ class NotificationsAdapter(val listener: Notifications): RecyclerView.Adapter<No
         val prinyat: Button = view.findViewById(R.id.prinyatNot)
         val otklonit: Button = view.findViewById(R.id.otklonitNot)
         val pereiti:Button = view.findViewById(R.id.pereitiVChat)
-        val zaprosOtpraplen:TextView = view.findViewById(R.id.zaprosOtpraplen)
+        val otpr:TextView = view.findViewById(R.id.zaprosOtpravlen)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SingleChatHolder {
@@ -39,7 +39,7 @@ class NotificationsAdapter(val listener: Notifications): RecyclerView.Adapter<No
             holder.prinyat.visibility=View.GONE
             holder.otklonit.visibility=View.GONE
             holder.pereiti.visibility=View.GONE
-            holder.zaprosOtpraplen.visibility=View.VISIBLE
+            holder.otpr.visibility=View.VISIBLE
 
             REF_DATABASE_ROOT.child("users").child(userTo).addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -54,8 +54,12 @@ class NotificationsAdapter(val listener: Notifications): RecyclerView.Adapter<No
             holder.prinyat.visibility=View.VISIBLE
             holder.otklonit.visibility=View.VISIBLE
             holder.pereiti.visibility=View.GONE
-            holder.zaprosOtpraplen.visibility=View.GONE
+            holder.otpr.visibility=View.GONE
             val userFrom = mListMessagesCache[position].from
+
+
+
+
             REF_DATABASE_ROOT.child("users").child(userFrom).addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
                     val username = dataSnapshot.child("username").getValue(String::class.java)
@@ -129,7 +133,7 @@ class NotificationsAdapter(val listener: Notifications): RecyclerView.Adapter<No
                         holder.prinyat.visibility=View.GONE
                         holder.otklonit.visibility=View.GONE
                         holder.pereiti.visibility=View.VISIBLE
-                        holder.zaprosOtpraplen.visibility=View.GONE
+                        holder.otpr.visibility=View.GONE
                         break
 
                     }
@@ -143,14 +147,14 @@ class NotificationsAdapter(val listener: Notifications): RecyclerView.Adapter<No
         notificationsRefTo.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 for (childSnapshot in snapshot.children) {
-                    val prinyato = childSnapshot.child("prinyato").getValue(String::class.java)
+                    var prinyato = childSnapshot.child("prinyato").getValue(String::class.java)
                     if (prinyato == "yes") {
+                        println("!!!@ "+childSnapshot)
                         holder.prinyat.visibility=View.GONE
                         holder.otklonit.visibility=View.GONE
                         holder.pereiti.visibility=View.VISIBLE
-                        holder.zaprosOtpraplen.visibility=View.GONE
+                        holder.otpr.visibility=View.GONE
                         break
-
                     }
                 }
             }

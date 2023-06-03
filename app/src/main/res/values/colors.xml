@@ -11,7 +11,20 @@
     <color name="profile">#FFC20B</color>
     <color name="play">#FF1C7E</color>
     <color name="message_companion">#FF7258</color>
-
+    <color name="message_companion_home">#9F2828</color>
+    <color name="my_purple_700">#620BA4</color>
+    <color name="my_purple_200">#923FD2</color>
+    <color name="my_purple_20">#33923FD2</color>
+    <color name="my_green_200">#D0F36E</color>
+    <color name="my_green_500">#AAE800</color>
+    <color name="my_green_700">#8BAE2B</color>
+    <color name="my_yellow_700">#F5C400</color>
+    <color name="my_yellow_200">#F5ED00</color>
+    <color name="my_blue_200">#2BDFFF</color>
+    <color name="message_companion_200">#BFFF7258</color>
+    <color name="my_white_200">#7CFFFFFF</color>
+    <color name="my_white_50">#BAFFFFFF</color>
+    <color name="my_blue_20">#342BDFFF</color>
     <color name="notifications_20">#3338FFD1</color>
     <color name="profile_20">#33FFC20B</color>
     <color name="play_20">#33FF1C7E</color>

@@ -42,9 +42,8 @@ class SetupProfile : Fragment() {
                 intent.type = "image/*"
                 startActivityForResult(intent,0)
             }
-
             gotovoButton.setOnClickListener(){
-                replaceFragment(VhodFragment())
+                Navigation.findNavController(binding.root)
             }
         }
 

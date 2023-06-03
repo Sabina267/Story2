@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/back_graind_vhod"
     android:layout_height="match_parent"
     tools:context=".activities.WriteStoryForMyself"
     >
@@ -11,50 +11,15 @@
     <TextView
         android:layout_width="319dp"
         android:layout_height="40dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="38dp"
         android:layout_marginEnd="16dp"
         android:gravity="right"
         android:text="Напиши что-нибудь..."
         android:textColor="@color/black"
-        android:textSize="30dp"
-        android:textStyle="bold"
+        android:textSize="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/zapis"
-        android:layout_width="329dp"
-        android:layout_height="317dp"
-        android:layout_marginTop="192dp"
-        android:ems="10"
-        android:hint="Запись"
-        android:imeOptions="flagForceAscii"
-        android:inputType="textMultiLine"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <EditText
-        android:id="@+id/zagolovok"
-        android:layout_width="329dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="150dp"
-        android:ems="10"
-        android:hint="Заголовок записи"
-        android:imeOptions="flagForceAscii"
-        android:inputType="textMultiLine"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/addZapis"
-        android:layout_width="150dp"
-        android:layout_height="80dp"
-        android:text="ГОТОВО"
-        android:layout_marginTop="36dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/zapis" />
 
     <ImageView
         android:id="@+id/back"
@@ -65,4 +30,67 @@
         android:src="@drawable/icon_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:hint="Заголовок записи"
+        app:boxBackgroundColor="@color/my_white_200"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/zagolovok"
+            android:maxLength="25"
+            android:imeOptions="flagForceAscii"
+            android:inputType="textMultiLine"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:minHeight="260dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="280dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:hint="Запись"
+        app:boxBackgroundColor="@color/my_white_200"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/zapis"
+            android:maxLength="250"
+            android:imeOptions="flagForceAscii"
+            android:inputType="textMultiLine"
+            android:layout_width="match_parent"
+            android:minHeight="260dp"
+            android:layout_height="match_parent"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/addZapis"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="652dp"
+        android:background="@drawable/butbar"
+        android:text="ГОТОВО"
+        android:textColor="@color/black"
+        app:backgroundTint="@color/white"
+        app:backgroundTintMode="add"
+        app:iconGravity="textEnd"
+        app:iconPadding="8dp"
+        app:iconTint="@color/my_purple_200"
+        app:iconTintMode="add"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:pressedTranslationZ="8dp"
+        app:rippleColor="@color/message_companion_200" />
 </androidx.constraintlayout.widget.ConstraintLayout>
